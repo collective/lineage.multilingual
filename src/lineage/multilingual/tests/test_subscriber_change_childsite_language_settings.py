@@ -1,0 +1,24 @@
+from lineage.multilingual.testing import FUNCTIONAL_TESTING
+from lineage.multilingual.testing import INTEGRATION_TESTING
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+
+import unittest
+
+
+class SubscriberIntegrationTest(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+
+
+class SubscriberFunctionalTest(unittest.TestCase):
+
+    layer = FUNCTIONAL_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])

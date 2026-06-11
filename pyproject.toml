@@ -4,14 +4,8 @@ dynamic = ["version", "readme"]
 description = "Multilingual configuration for lineage child sites"
 license = "GPL-2.0-only"
 requires-python = ">=3.10"
-authors = [
-    { name = "Mikel Larreategi", email = "mlarreategi@codesyntax.com" },
-]
-keywords = [
-    "CMS",
-    "Plone",
-    "Python",
-]
+authors = [{ name = "Mikel Larreategi", email = "mlarreategi@codesyntax.com" }]
+keywords = ["CMS", "Plone", "Python"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Web Environment",
@@ -27,18 +21,14 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
 ]
-dependencies = [
-    "Products.CMFPlone",
-    "plone.api",
-    
-    "z3c.jbot",
-]
+dependencies = ["Products.CMFPlone", "plone.api", "z3c.jbot", "z3c.unconfigure"]
 
 [project.optional-dependencies]
 test = [
     "horse-with-no-namespace",
     "plone.app.testing",
-    "plone.classicui","plone.restapi[test]",
+    "plone.classicui",
+    "plone.restapi[test]",
     "pytest",
     "pytest-cov",
     "pytest-plone>=1.0.0a2",
@@ -73,9 +63,7 @@ build-backend = "hatchling.build"
 strict-naming = true
 
 [tool.hatch.build.targets.sdist]
-exclude = [
-  "/.github",
-]
+exclude = ["/.github"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/lineage"]
@@ -153,7 +141,8 @@ lint.select = [
     # mccabe
     "C90",
     # pycodestyle
-    "E", "W",
+    "E",
+    "W",
     # pyflakes
     "F",
     # pygrep-hooks
@@ -190,9 +179,7 @@ testpaths = ["tests"]
 source_pkgs = ["lineage.multilingual", "tests"]
 branch = true
 parallel = true
-omit = [
-  "src/lineage/multilingual/locales/*.py",
-]
+omit = ["src/lineage/multilingual/locales/*.py"]
 
 [tool.zest-releaser]
 python-file-with-version = "src/lineage/multilingual/__init__.py"

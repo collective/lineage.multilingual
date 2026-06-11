@@ -1,13 +1,29 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    i18n_domain="lineage.multilingual">
+    i18n_domain="lineage.multilingual"
+    >
 
- <!-- -*- extra stuff goes here -*- -->
+  <!-- -*- extra stuff goes here -*- -->
 
-  <subscriber for="plone.dexterity.interfaces.IDexterityContent
-                   zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-              handler=".change_childsite_language_settings.handler"
-              />
+  <subscriber
+      for="plone.i18n.interfaces.ILanguageSchema
+           plone.registry.interfaces.IRecordModifiedEvent"
+      handler=".change_childsite_language_settings.handler"
+      />
+
+  <include
+      package="z3c.unconfigure"
+      file="meta.zcml"
+      />
+
+  <unconfigure package="plone.app.multilingual">
+    <subscriber
+        for="plone.i18n.interfaces.ILanguageSchema
+             plone.registry.interfaces.IRecordModifiedEvent"
+        handler=".subscriber.change_language_settings"
+        />
+
+  </unconfigure>
 
 
 </configure>

@@ -1,5 +1,5 @@
-from zope.globalrequest import getRequest
 from Products.CMFCore.interfaces import IContentish
+from zope.globalrequest import getRequest
 
 
 def get_current_context():
@@ -24,7 +24,8 @@ def get_current_context():
             context = parents[0]
 
     # 4. Content verification (Optional but Recommended)
-    # This ensures you got actual Plone content, rather than a skin template or system resource
+    # This ensures you got actual Plone content,
+    # rather than a skin template or system resource
     if context and IContentish.providedBy(context):
         return context
 

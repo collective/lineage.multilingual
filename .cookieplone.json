@@ -1,0 +1,14 @@
+{
+    "title": "lineage.multilingual",
+    "description": "Multilingual configuration for lineage child sites",
+    "author": "Mikel Larreategi",
+    "email": "mlarreategi@codesyntax.com",
+    "github_organization": "collective",
+    "use_prerelease_versions": "No",
+    "plone_version": "6.2.0",
+    "python_package_name": "lineage.multilingual",
+    "feature_headless": false,
+    "initialize_ci": true,
+    "initialize_documentation": true,
+    "__template__": "backend_addon"
+}

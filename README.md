@@ -23,7 +23,11 @@ Multilingual configuration for lineage child sites
 
 ## Features
 
-TODO: List our awesome features
+With this package, if you set a custom set of languages in a Lineage ChildSite, the `LRF`s that correspond to the selected languages will be created inside the ChildSite.
+
+This is useful when you want to have a different set of languages in the root of the site and in the child site.
+
+It also helps to have the language URLs inside the childsite
 
 ## Installation
 

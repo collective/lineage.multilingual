@@ -27,7 +27,15 @@ With this package, if you set a custom set of languages in a Lineage ChildSite, 
 
 This is useful when you want to have a different set of languages in the root of the site and in the child site.
 
-It also helps to have the language URLs inside the childsite
+It also helps to have the language URLs inside the childsite.
+
+And how we do it?
+
+We just override the [subscriber](https://github.com/plone/plone.app.multilingual/blob/master/src/plone/app/multilingual/subscriber.py#L184) that plone.app.multilingual has to create the `LRF`s in the root of the site, and call it with the context where the language settings are being applied.
+
+If using this with [collective.lineage](https://github.com/collective/collective.lineage) you may want to install also [lineage.registry](https://github.com/collective/lineage.registry) for having a local registry in child sites, and [lineage.controlpanels](https://github.com/collective/lineage.controlpanels) to be able to set local values for the registry in the childsite.
+
+Until a new release of plone.app.multilingual is ready, this package needs [this branch](https://github.com/plone/plone.app.multilingual/tree/erral-aqbase-setupsite) of plone.app.multilingual.
 
 ## Installation
 
